@@ -37,14 +37,8 @@ public class QuestionTest extends BaseTest {
         MainPage mainPage = new MainPage();
         mainPage.clickBtnAcceptСookies();
         mainPage.findHeaderListQuestions();
-
-        (new WebDriverWait(driver, Duration.ofSeconds(3))).
-                until(ExpectedConditions.elementToBeClickable(mainPage.getBtnListQuestions().get(0)));
-
         mainPage.clickBtnListQuestions(0);
 
-        (new WebDriverWait(driver, Duration.ofSeconds(3))).
-                until(ExpectedConditions.visibilityOf(mainPage.getListAnswers().get(0)));
         String textAnswerActual = mainPage.getTextAnswer(0);
 
         assertEquals(missing, textAnswerExpected.get(0), textAnswerActual);
@@ -55,14 +49,8 @@ public class QuestionTest extends BaseTest {
         MainPage mainPage = new MainPage();
         mainPage.clickBtnAcceptСookies();
         mainPage.findHeaderListQuestions();
-
-        (new WebDriverWait(driver, Duration.ofSeconds(3))).
-                until(ExpectedConditions.elementToBeClickable(mainPage.getBtnListQuestions().get(2)));
-
         mainPage.clickBtnListQuestions(1);
 
-        (new WebDriverWait(driver, Duration.ofSeconds(3))).
-                until(ExpectedConditions.visibilityOf(mainPage.getListAnswers().get(1)));
         String textAnswerActual = mainPage.getTextAnswer(1);
 
         assertEquals(missing, textAnswerExpected.get(1), textAnswerActual);
@@ -73,14 +61,8 @@ public class QuestionTest extends BaseTest {
         MainPage mainPage = new MainPage();
         mainPage.clickBtnAcceptСookies();
         mainPage.findHeaderListQuestions();
-
-        (new WebDriverWait(driver, Duration.ofSeconds(3))).
-                until(ExpectedConditions.elementToBeClickable(mainPage.getBtnListQuestions().get(2)));
-
         mainPage.clickBtnListQuestions(2);
 
-        (new WebDriverWait(driver, Duration.ofSeconds(3))).
-                until(ExpectedConditions.visibilityOf(mainPage.getListAnswers().get(2)));
         String textAnswerActual = mainPage.getTextAnswer(2);
 
         assertEquals(missing, textAnswerExpected.get(2), textAnswerActual);
@@ -91,14 +73,8 @@ public class QuestionTest extends BaseTest {
         MainPage mainPage = new MainPage();
         mainPage.clickBtnAcceptСookies();
         mainPage.findHeaderListQuestions();
-
-        (new WebDriverWait(driver, Duration.ofSeconds(3))).
-                until(ExpectedConditions.elementToBeClickable(mainPage.getBtnListQuestions().get(3)));
-
         mainPage.clickBtnListQuestions(3);
 
-        (new WebDriverWait(driver, Duration.ofSeconds(3))).
-                until(ExpectedConditions.visibilityOf(mainPage.getListAnswers().get(3)));
         String textAnswerActual = mainPage.getTextAnswer(3);
 
         assertEquals(missing, textAnswerExpected.get(3), textAnswerActual);
@@ -109,14 +85,8 @@ public class QuestionTest extends BaseTest {
         MainPage mainPage = new MainPage();
         mainPage.clickBtnAcceptСookies();
         mainPage.findHeaderListQuestions();
-
-        (new WebDriverWait(driver, Duration.ofSeconds(3))).
-                until(ExpectedConditions.elementToBeClickable(mainPage.getBtnListQuestions().get(4)));
-
         mainPage.clickBtnListQuestions(4);
 
-        (new WebDriverWait(driver, Duration.ofSeconds(3))).
-                until(ExpectedConditions.visibilityOf(mainPage.getListAnswers().get(4)));
         String textAnswerActual = mainPage.getTextAnswer(4);
 
         assertEquals(missing, textAnswerExpected.get(4), textAnswerActual);
@@ -127,14 +97,8 @@ public class QuestionTest extends BaseTest {
         MainPage mainPage = new MainPage();
         mainPage.clickBtnAcceptСookies();
         mainPage.findHeaderListQuestions();
-
-        (new WebDriverWait(driver, Duration.ofSeconds(3))).
-                until(ExpectedConditions.elementToBeClickable(mainPage.getBtnListQuestions().get(5)));
-
         mainPage.clickBtnListQuestions(5);
 
-        (new WebDriverWait(driver, Duration.ofSeconds(3))).
-                until(ExpectedConditions.visibilityOf(mainPage.getListAnswers().get(5)));
         String textAnswerActual = mainPage.getTextAnswer(5);
 
         assertEquals(missing, textAnswerExpected.get(5), textAnswerActual);
@@ -145,14 +109,8 @@ public class QuestionTest extends BaseTest {
         MainPage mainPage = new MainPage();
         mainPage.clickBtnAcceptСookies();
         mainPage.findHeaderListQuestions();
-
-        (new WebDriverWait(driver, Duration.ofSeconds(3))).
-                until(ExpectedConditions.elementToBeClickable(mainPage.getBtnListQuestions().get(6)));
-
         mainPage.clickBtnListQuestions(6);
 
-        (new WebDriverWait(driver, Duration.ofSeconds(3))).
-                until(ExpectedConditions.visibilityOf(mainPage.getListAnswers().get(6)));
         String textAnswerActual = mainPage.getTextAnswer(6);
 
         assertEquals(missing, textAnswerExpected.get(6), textAnswerActual);
@@ -163,14 +121,8 @@ public class QuestionTest extends BaseTest {
         MainPage mainPage = new MainPage();
         mainPage.clickBtnAcceptСookies();
         mainPage.findHeaderListQuestions();
-
-        (new WebDriverWait(driver, Duration.ofSeconds(3))).
-                until(ExpectedConditions.elementToBeClickable(mainPage.getBtnListQuestions().get(7)));
-
         mainPage.clickBtnListQuestions(7);
 
-        (new WebDriverWait(driver, Duration.ofSeconds(3))).
-                until(ExpectedConditions.visibilityOf(mainPage.getListAnswers().get(7)));
         String textAnswerActual = mainPage.getTextAnswer(7);
 
         assertEquals(missing, textAnswerExpected.get(7), textAnswerActual);

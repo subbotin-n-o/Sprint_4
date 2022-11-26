@@ -41,10 +41,14 @@ public class MainPage extends AbstractPage {
     }
 
     public void clickBtnListQuestions(int btnIndex) {
+        (new WebDriverWait(driver, Duration.ofSeconds(3))).
+                until(ExpectedConditions.elementToBeClickable(btnListQuestions.get(btnIndex)));
         btnListQuestions.get(btnIndex).click();
     }
 
     public String getTextAnswer(int answerIndex) {
+        (new WebDriverWait(driver, Duration.ofSeconds(3))).
+                until(ExpectedConditions.visibilityOf(listAnswers.get(answerIndex)));
         return listAnswers.get(answerIndex).getText();
     }
 
