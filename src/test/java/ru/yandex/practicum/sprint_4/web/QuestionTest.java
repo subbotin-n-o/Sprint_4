@@ -1,6 +1,5 @@
 package ru.yandex.practicum.sprint_4.web;
 
-
 import org.junit.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -42,7 +41,8 @@ public class QuestionTest extends BaseTest {
 
         mainPage.clickBtnListQuestions(0);
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        (new WebDriverWait(driver, Duration.ofSeconds(3))).
+                until(ExpectedConditions.visibilityOf(mainPage.getListAnswers().get(0)));
         String textAnswerActual = mainPage.getTextAnswer(0);
 
         assertEquals(missing, textAnswerExpected.get(0), textAnswerActual);
@@ -59,7 +59,8 @@ public class QuestionTest extends BaseTest {
 
         mainPage.clickBtnListQuestions(1);
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        (new WebDriverWait(driver, Duration.ofSeconds(3))).
+                until(ExpectedConditions.visibilityOf(mainPage.getListAnswers().get(1)));
         String textAnswerActual = mainPage.getTextAnswer(1);
 
         assertEquals(missing, textAnswerExpected.get(1), textAnswerActual);
@@ -76,7 +77,8 @@ public class QuestionTest extends BaseTest {
 
         mainPage.clickBtnListQuestions(2);
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        (new WebDriverWait(driver, Duration.ofSeconds(3))).
+                until(ExpectedConditions.visibilityOf(mainPage.getListAnswers().get(2)));
         String textAnswerActual = mainPage.getTextAnswer(2);
 
         assertEquals(missing, textAnswerExpected.get(2), textAnswerActual);
@@ -93,7 +95,8 @@ public class QuestionTest extends BaseTest {
 
         mainPage.clickBtnListQuestions(3);
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        (new WebDriverWait(driver, Duration.ofSeconds(3))).
+                until(ExpectedConditions.visibilityOf(mainPage.getListAnswers().get(3)));
         String textAnswerActual = mainPage.getTextAnswer(3);
 
         assertEquals(missing, textAnswerExpected.get(3), textAnswerActual);
@@ -110,7 +113,8 @@ public class QuestionTest extends BaseTest {
 
         mainPage.clickBtnListQuestions(4);
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        (new WebDriverWait(driver, Duration.ofSeconds(3))).
+                until(ExpectedConditions.visibilityOf(mainPage.getListAnswers().get(4)));
         String textAnswerActual = mainPage.getTextAnswer(4);
 
         assertEquals(missing, textAnswerExpected.get(4), textAnswerActual);
@@ -127,7 +131,8 @@ public class QuestionTest extends BaseTest {
 
         mainPage.clickBtnListQuestions(5);
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        (new WebDriverWait(driver, Duration.ofSeconds(3))).
+                until(ExpectedConditions.visibilityOf(mainPage.getListAnswers().get(5)));
         String textAnswerActual = mainPage.getTextAnswer(5);
 
         assertEquals(missing, textAnswerExpected.get(5), textAnswerActual);
@@ -144,7 +149,8 @@ public class QuestionTest extends BaseTest {
 
         mainPage.clickBtnListQuestions(6);
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        (new WebDriverWait(driver, Duration.ofSeconds(3))).
+                until(ExpectedConditions.visibilityOf(mainPage.getListAnswers().get(6)));
         String textAnswerActual = mainPage.getTextAnswer(6);
 
         assertEquals(missing, textAnswerExpected.get(6), textAnswerActual);
@@ -161,7 +167,8 @@ public class QuestionTest extends BaseTest {
 
         mainPage.clickBtnListQuestions(7);
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        (new WebDriverWait(driver, Duration.ofSeconds(3))).
+                until(ExpectedConditions.visibilityOf(mainPage.getListAnswers().get(7)));
         String textAnswerActual = mainPage.getTextAnswer(7);
 
         assertEquals(missing, textAnswerExpected.get(7), textAnswerActual);
