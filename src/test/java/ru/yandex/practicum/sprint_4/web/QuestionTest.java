@@ -1,6 +1,7 @@
 package ru.yandex.practicum.sprint_4.web;
 
 import org.junit.*;
+import org.junit.runners.MethodSorters;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.yandex.practicum.sprint_4.pages.MainPage;
@@ -12,6 +13,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class QuestionTest extends BaseTest {
 
     private static final String missing = "The text does not match the condition";
@@ -31,7 +33,7 @@ public class QuestionTest extends BaseTest {
     }
 
     @Test
-    public void textAnswerOneTest() {
+    public void a_textAnswerOneTest() {
         MainPage mainPage = new MainPage();
         mainPage.clickBtnAcceptСookies();
         mainPage.findHeaderListQuestions();
@@ -49,7 +51,7 @@ public class QuestionTest extends BaseTest {
     }
 
     @Test
-    public void textAnswerTwoTest() {
+    public void b_textAnswerTwoTest() {
         MainPage mainPage = new MainPage();
         mainPage.clickBtnAcceptСookies();
         mainPage.findHeaderListQuestions();
@@ -67,7 +69,7 @@ public class QuestionTest extends BaseTest {
     }
 
     @Test
-    public void textAnswerThreeTest() {
+    public void c_textAnswerThreeTest() {
         MainPage mainPage = new MainPage();
         mainPage.clickBtnAcceptСookies();
         mainPage.findHeaderListQuestions();
@@ -85,7 +87,7 @@ public class QuestionTest extends BaseTest {
     }
 
     @Test
-    public void textAnswerFourTest() {
+    public void d_textAnswerFourTest() {
         MainPage mainPage = new MainPage();
         mainPage.clickBtnAcceptСookies();
         mainPage.findHeaderListQuestions();
@@ -103,7 +105,7 @@ public class QuestionTest extends BaseTest {
     }
 
     @Test
-    public void textAnswerFiveTest() {
+    public void e_textAnswerFiveTest() {
         MainPage mainPage = new MainPage();
         mainPage.clickBtnAcceptСookies();
         mainPage.findHeaderListQuestions();
@@ -121,7 +123,7 @@ public class QuestionTest extends BaseTest {
     }
 
     @Test
-    public void textAnswerSixTest() {
+    public void f_textAnswerSixTest() {
         MainPage mainPage = new MainPage();
         mainPage.clickBtnAcceptСookies();
         mainPage.findHeaderListQuestions();
@@ -139,7 +141,7 @@ public class QuestionTest extends BaseTest {
     }
 
     @Test
-    public void textAnswerSevenTest() {
+    public void g_textAnswerSevenTest() {
         MainPage mainPage = new MainPage();
         mainPage.clickBtnAcceptСookies();
         mainPage.findHeaderListQuestions();
@@ -157,7 +159,7 @@ public class QuestionTest extends BaseTest {
     }
 
     @Test
-    public void textAnswerEightTest() {
+    public void h_textAnswerEightTest() {
         MainPage mainPage = new MainPage();
         mainPage.clickBtnAcceptСookies();
         mainPage.findHeaderListQuestions();
