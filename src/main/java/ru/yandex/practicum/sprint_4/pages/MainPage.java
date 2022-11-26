@@ -1,10 +1,14 @@
 package ru.yandex.practicum.sprint_4.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 public class MainPage extends AbstractPage {
@@ -15,11 +19,33 @@ public class MainPage extends AbstractPage {
     @FindBy(xpath = ".//button[@class='Button_Button__ra12g Button_Middle__1CSJM']")
     private WebElement btnOrderLower;
 
-    List<WebElement> listQuestions = driver.findElements(By.className("accordion__button"));
-    List<WebElement> listAnswers = driver.findElements(By.className("accordion__panel"));
+    @FindBy(xpath = ".//button[@id='rcc-confirm-button']")
+    private WebElement btnAcceptСookies;
+
+    @FindBy(xpath = ".//div[text()=\"Вопросы о важном\"]")
+    private WebElement headerListQuestions;
+
+    private final List<WebElement> btnListQuestions = driver.findElements(By.className("accordion__button"));
+    private final List<WebElement> listAnswers = driver.findElements(By.xpath(".//div[@class='accordion__panel']/p"));
 
     public MainPage() {
         PageFactory.initElements(driver, this);
+    }
+
+    public List<WebElement> getBtnListQuestions() {
+        return btnListQuestions;
+    }
+
+    public List<WebElement> getListAnswers() {
+        return listAnswers;
+    }
+
+    public void clickBtnListQuestions(int btnIndex) {
+        btnListQuestions.get(btnIndex).click();
+    }
+
+    public String getTextAnswer(int answerIndex) {
+        return listAnswers.get(answerIndex).getText();
     }
 
     public void clickBtnOrderUpper() {
@@ -30,15 +56,13 @@ public class MainPage extends AbstractPage {
         btnOrderLower.click();
     }
 
-    public void clickListQuestions() {
-        for (WebElement e : listQuestions) {
-            e.click();
-        }
+    public void clickBtnAcceptСookies() {
+        new WebDriverWait(driver, Duration.ofSeconds(3))
+                .until(ExpectedConditions.elementToBeClickable(btnAcceptСookies));
+        btnAcceptСookies.click();
     }
 
-    public void getTextListAnswer() {
-        for (WebElement e : listAnswers) {
-            e.getText();
-        }
+    public void findHeaderListQuestions() {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", headerListQuestions);
     }
 }
