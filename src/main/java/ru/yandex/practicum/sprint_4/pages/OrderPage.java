@@ -86,17 +86,13 @@ public class OrderPage extends AbstractPage {
     }
 
     public void enterMetroStation(String metroStation) {
-//        String metroOptionTemplate = ".//input[@placeholder='* Станция метро' and @value='%s']";
-//       // WebElement element = driver.findElement(By.xpath(".//input[@placeholder='* Станция метро' and @value='Черкизовская'"));
-//
-//        dropMetroStation.sendKeys(metroStation);
-//        (new WebDriverWait(driver, Duration.ofSeconds(3))).
-//                until(ExpectedConditions.attributeToBe(driver.findElement(By.xpath(String.format(metroOptionTemplate, metroStation))), "value", metroStation));
-//
-//        driver.findElement(By.xpath(String.format(metroOptionTemplate, metroStation))).click();
+        String metroOptionTemplate = ".//div[@class='select-search__select']//*[contains(text(), '%s')]";
 
-        dropMetroStation.click();
-        metroBulvar.click();
+        dropMetroStation.sendKeys(metroStation);
+        (new WebDriverWait(driver, Duration.ofSeconds(3))).
+                until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(String.format(metroOptionTemplate, metroStation)))));
+
+        driver.findElement(By.xpath(String.format(metroOptionTemplate, metroStation))).click();
     }
 
     public void enterPhoneNUmber(String phoneNUmber) {
