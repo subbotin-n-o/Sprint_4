@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class OrderPage extends AbstractPage {
-    //--------------------Для кого самокат---------------------------------
+
     @FindBy(xpath = ".//input[@placeholder='* Имя']")
     private WebElement fieldName;
 
@@ -23,16 +23,11 @@ public class OrderPage extends AbstractPage {
     @FindBy(xpath = ".//input[@placeholder='* Станция метро']")
     private WebElement dropMetroStation;
 
-    @FindBy(xpath = ".//div[@class='Order_Text__2broi']")
-    private WebElement metroBulvar;
-
     @FindBy(xpath = ".//input[@placeholder='* Телефон: на него позвонит курьер']")
     private WebElement fieldPhoneNUmber;
 
     @FindBy(xpath = ".//button[@class='Button_Button__ra12g Button_Middle__1CSJM']")
     private WebElement btnNext;
-
-    //--------------------Про аренду---------------------------------
 
     @FindBy(xpath = ".//input[@placeholder='* Когда привезти самокат']")
     private WebElement dropDeliveryDate;
@@ -52,32 +47,26 @@ public class OrderPage extends AbstractPage {
     @FindBy(xpath = ".//button[@class='Button_Button__ra12g Button_Middle__1CSJM']")
     private WebElement btnOrder;
 
-    @FindBy(xpath = ".//button[@class='Button_Button__ra12g Button_Middle__1CSJM Button_Inverted__3IF-i']")
-    private WebElement btnBack;
-
-    //--------------------Заказ оформлен---------------------------------
-
     @FindBy(xpath = ".//button[contains(text(), 'Да')]")
     private WebElement btnYes;
 
-    @FindBy(xpath = ".//button[contains(text(), 'Нет')]")
-    private WebElement btnNot;
-
     @FindBy(xpath = ".//div[@class='Order_ModalHeader__3FDaJ']")
     private WebElement headerOrderProcessed;
-
-    @FindBy(xpath = ".//button[contains(text(), 'Посмотреть статус')]")
-    private WebElement btnViewStatus;
 
     public OrderPage() {
         PageFactory.initElements(driver, this);
     }
 
-    public void enterName(String name) {
+    public void enterUserName (String name, String surname) {
+        enterName(name);
+        enterSurname(surname);
+    }
+
+    private void enterName(String name) {
         fieldName.sendKeys(name);
     }
 
-    public void enterSurname(String surname) {
+    private void enterSurname(String surname) {
         fieldSurname.sendKeys(surname);
     }
 
@@ -103,7 +92,7 @@ public class OrderPage extends AbstractPage {
         btnNext.click();
     }
 
-    public void setDropDeliveryDate(String deliveryDate) {
+    public void enterDeliveryDate(String deliveryDate) {
         String date = ".//div[@aria-label='month  2022-11' ]//div[contains(@aria-label, '%s')]";
         dropDeliveryDate.click();
         (new WebDriverWait(driver, Duration.ofSeconds(3))).
@@ -111,7 +100,7 @@ public class OrderPage extends AbstractPage {
         driver.findElement(By.xpath(String.format(date, deliveryDate))).click();
     }
 
-    public void setDropRentalPeriod(String rentalPeriod) {
+    public void enterDropRentalPeriod(String rentalPeriod) {
         String period = ".//div[contains(text(), '%s')]";
         dropRentalPeriod.click();
         (new WebDriverWait(driver, Duration.ofSeconds(3))).
@@ -127,7 +116,7 @@ public class OrderPage extends AbstractPage {
         }
     }
 
-    public void setCommentCourier(String comment) {
+    public void enterCommentCourier(String comment) {
         commentCourier.sendKeys(comment);
     }
 
@@ -135,16 +124,8 @@ public class OrderPage extends AbstractPage {
         btnOrder.click();
     }
 
-    public void clickBtnYesOrNot(String btnName) {
-        if (btnName.equals("Да")) {
-            (new WebDriverWait(driver, Duration.ofSeconds(3))).
-                    until(ExpectedConditions.visibilityOf(btnYes));
-            btnYes.click();
-        } else if (btnName.equals("Нет")) {
-            (new WebDriverWait(driver, Duration.ofSeconds(3))).
-                    until(ExpectedConditions.visibilityOf(btnNot));
-            btnNot.click();
-        }
+    public void clickBtnYes() {
+        btnYes.click();
     }
 
     public String getTextOrderProcessed() {

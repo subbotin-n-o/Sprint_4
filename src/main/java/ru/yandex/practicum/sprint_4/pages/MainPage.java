@@ -32,14 +32,6 @@ public class MainPage extends AbstractPage {
         PageFactory.initElements(driver, this);
     }
 
-    public List<WebElement> getBtnListQuestions() {
-        return btnListQuestions;
-    }
-
-    public List<WebElement> getListAnswers() {
-        return listAnswers;
-    }
-
     public void clickBtnListQuestions(int btnIndex) {
         (new WebDriverWait(driver, Duration.ofSeconds(3))).
                 until(ExpectedConditions.elementToBeClickable(btnListQuestions.get(btnIndex)));
@@ -52,11 +44,20 @@ public class MainPage extends AbstractPage {
         return listAnswers.get(answerIndex).getText();
     }
 
-    public void clickBtnOrderUpper() {
+    public void clickBtnOrder(String btnName) {
+        if(btnName.equals("Upper")) {
+            clickBtnOrderUpper();
+        } else if(btnName.equals("Lower")) {
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", btnOrderLower);
+            clickBtnOrderLower();
+        }
+    }
+
+    private void clickBtnOrderUpper() {
         btnOrderUpper.click();
     }
 
-    public void clickBtnOrderLower() {
+    private void clickBtnOrderLower() {
         btnOrderLower.click();
     }
 
