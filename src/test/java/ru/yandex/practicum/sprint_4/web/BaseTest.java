@@ -15,7 +15,7 @@ public class BaseTest {
     protected static WebDriver driver;
 
     public static void before() throws IOException {
-        setup(GOOGLE_CHROME);
+        setup(MOZILLA_FIREFOX);
         openUrl();
     }
 

@@ -2,12 +2,9 @@ package ru.yandex.practicum.sprint_4.web;
 
 import org.junit.*;
 import org.junit.runners.MethodSorters;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.yandex.practicum.sprint_4.pages.MainPage;
 
 import java.io.IOException;
-import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 

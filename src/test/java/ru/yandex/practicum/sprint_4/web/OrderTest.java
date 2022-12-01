@@ -15,9 +15,6 @@ import static org.junit.Assert.assertTrue;
 @RunWith(Parameterized.class)
 public class OrderTest extends BaseTest {
 
-//    private static final String btnUpper = "Upper";
-//    private static final String btnLower = "Lower";
-
     private final String name;
     private final String surname;
     private final String deliveryAdress;
@@ -70,10 +67,8 @@ public class OrderTest extends BaseTest {
         orderPage.clickBtnOrder();
         orderPage.clickBtnYes();
 
-
         String expectedText = "Заказ оформлен";
         String actualText = orderPage.getTextOrderProcessed();
-
 
         assertTrue(String.format("The success message should contain '%s'", expectedText), actualText.contains(expectedText));
     }
